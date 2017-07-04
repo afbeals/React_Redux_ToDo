@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { browserHistory } from 'react-router'
+import { browserHistory, hashHistory } from 'react-router'
 import rootReducer from './reducers/index';
 
 /*
@@ -23,7 +23,7 @@ const enhancers = compose(
 const store = createStore(rootReducer, defaultState, enhancers);
 
 // we export history because we need it in `reduxstagram.js` to feed into <Router>
-export const history = syncHistoryWithStore(browserHistory, store);
+export const history = syncHistoryWithStore( hashHistory, store);
 
 /*
   Enable Hot Reloading for the reducers

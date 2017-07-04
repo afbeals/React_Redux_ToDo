@@ -32,8 +32,8 @@ import Main from './Main';
 
 function mapStateToProps(state) {
   return {
-    posts: state.person,
-    comments : state.curNum
+    person: state.person,
+    curNum : state.curNum
   };
 }
 

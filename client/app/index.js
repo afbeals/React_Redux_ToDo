@@ -6,8 +6,9 @@ import {Router, Route, IndexRoute } from 'react-router';
 
 // Components
 import App from './components/App';
-import Profile from './components/Profile';
+import Single from './components/Single';
 import ProfileGrid from './components/ProfileGrid';
+import Profile from './components/Profile';
 
 // Css
 
@@ -21,7 +22,8 @@ render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={ProfileGrid} />
-        <Route path="/view/:username" component={Profile}></Route>
+        <Route path="/view/:username" component={Single} />
+        <Route path="/test" component={Profile} />
       </Route>
     </Router>
   </Provider>,
