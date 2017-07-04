@@ -5,7 +5,7 @@ export default class ProfileGrid extends React.Component {
 	render(){
 		return (
 			<div>
-				ProfileGrid Component! 
+				ProfileGrid Component! {console.log(this.props)}
 			</div>
 		)
 	}

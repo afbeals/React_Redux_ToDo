@@ -5,15 +5,13 @@ import { Provider }	 from 'react-redux';
 import {Rouer, Route, IndexRoute,browserHistory } from 'react-router';
 
 // Components
-//import App from './components/App';
-//import Profile from './components/Profile';
-//import ProfileGrid from './components/ProfileGrid';
-import Main from './components/Main';
+import App from './components/App';
+
 // Css
 
 // Store
 
 render(
-	<Main/>,
+	<App/>,
 	document.getElementById('app')
 );

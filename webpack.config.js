@@ -1,7 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 var DIST_DIR = path.resolve(__dirname, "dist");
-var SRC_DIR = path.resolve(__dirname, "src");
+var SRC_DIR = path.resolve(__dirname, "client");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 var extractPlugin = new ExtractTextPlugin({
@@ -63,7 +63,7 @@ var config = {
 	plugins: [
 		extractPlugin,
 		new HTMLWebpackPlugin({
-			template: 'src/index.html'
+			template: 'client/index.html'
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
