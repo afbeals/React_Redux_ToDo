@@ -16,14 +16,21 @@ export default class Profile extends React.Component {
 		);
 		console.log(this.state);
 	}
-	componentWillMount() {
-        console.log("Component will mount");
-    }
+
+	onYellAtSomeone(){
+		let curPerson = document.getElementById('personsName').value;
+		this.props.yellAtWho(curPerson);
+	}
+
 	render(){
 		return (
 			<div>
 				Profile Component!
-				<button onClick={()=>this.props.consoleLog()}>Console Log </button>
+				<label htmlFor="personsName">
+					Who should we yell at?
+					<input type="text" name="personsName" id="personsName" />
+				</label>
+				<button onClick={()=>this.onYellAtSomeone()}>Tell em' </button>
 				<button onClick={()=>this.onIncreaseNumber()}>Increase Number {this.state.curNum}</button>
 			</div>
 		)
