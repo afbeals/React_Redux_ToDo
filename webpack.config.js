@@ -9,11 +9,11 @@ var extractPlugin = new ExtractTextPlugin({
 });
 
 var config = {
-	entry: ['webpack-hot-middleware/client',SRC_DIR + "/app/index.js"],
+	entry: ['webpack-hot-middleware/client',SRC_DIR + "/app/index"],
 	output: {
 		path: DIST_DIR + "/app",
 		filename: "bundle.js",
-		publicPath: "/dist"
+		//publicPath: "/dist"
 	},
 	module: {
 		rules: [
@@ -68,7 +68,9 @@ var config = {
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'
-		})
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+    	new webpack.NoEmitOnErrorsPlugin()
 	]
 };
 
