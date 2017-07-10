@@ -10,13 +10,17 @@
     "build:dev": "node devServer.js"
   },
   "keywords": [
-    "ReactJs","Redux","MySql","webpack"
+    "ReactJs",
+    "Redux",
+    "MySql",
+    "webpack"
   ],
   "author": "Allan Beals-Gibson",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
     "jquery": "^3.2.1",
+    "mysql": "^2.13.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
@@ -46,4 +50,3 @@
     "webpack-hot-middleware": "^2.7.1"
   }
 }
-
