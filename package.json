@@ -18,6 +18,7 @@
   "author": "Allan Beals-Gibson",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.13.4",
     "jquery": "^3.2.1",
     "mysql": "^2.13.0",
