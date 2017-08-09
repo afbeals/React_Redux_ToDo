@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { browserHistory, hashHistory } from 'react-router'
+import { browserHistory, hashHistory } from 'react-router';
+import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
-
+import axios from 'axios';
 /*
   Store
 
@@ -13,14 +14,17 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
   curNum: 10,
-  person: "Allan"
+  person: "Allan",
+  setItems: [],
+  itemsHasErrored: false,
+  itemsIsLoading: false
 };
 
 const enhancers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
-const store = createStore(rootReducer, defaultState, enhancers);
+const store = createStore(rootReducer, defaultState, applyMiddleware(thunk), enhancers);
 
 // we export history because we need it in `reduxstagram.js` to feed into <Router>
 export const history = syncHistoryWithStore( hashHistory, store);

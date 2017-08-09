@@ -13,8 +13,11 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux'; // we need this for react-router
 import person from './person';
 import curNum from './curNum';
+import itemsHasErrored from './hasErrored';
+import itemsIsLoading from './isLoading';
+import setItems from './setItems';
 
 // Combine all our reducers togeher
-const rootReducer = combineReducers({ person, curNum, routing: routerReducer });
+const rootReducer = combineReducers({ person, curNum, itemsHasErrored, itemsIsLoading, setItems, routing: routerReducer });
 
 export default rootReducer;

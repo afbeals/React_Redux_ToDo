@@ -33,7 +33,10 @@ import Main from './Main';
 function mapStateToProps(state) {
   return {
     person: state.person,
-    curNum : state.curNum
+    curNum : state.curNum,
+    setItems: state.setItems,
+    itemsHasErrored: state.itemsHasErrored,
+    itemsIsLoading: state.itemsIsLoading
   };
 }
 

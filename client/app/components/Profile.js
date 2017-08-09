@@ -7,16 +7,6 @@ export default class Profile extends React.Component {
 		super();
 	}
 
-	getAllUsers(){
-		const request = axios.get('/getAllUsers')
-		.then(function (response) {
-		    console.log(response);
-		  })
-		  .catch(function (error) {
-		    console.log(error);
-		  });
-	}
-
 	render(){
 		return (
 			<div>
