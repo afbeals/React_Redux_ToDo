@@ -6,14 +6,13 @@ export default class Single extends React.Component {
 		super();
 		console.log(props);
 	}
-	componentDidMount() {
-        this.props.itemsFetchData("http://pokeapi.co/api/v2/pokemon/1/");
-    }
+
 
 	render(){
 		return (	
 			<div>
-				<p>{console.log(this.props.setItems,this.props)}</p>
+				<p>{this.props.setItems}</p>
+				<button onClick={()=>this.props.itemsFetchData("/getAllUsers")}>click me </button>
 				Single Component!
 			</div>
 		)

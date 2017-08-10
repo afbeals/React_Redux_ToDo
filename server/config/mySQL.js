@@ -7,7 +7,7 @@ module.exports = {
 		host 			: 'localhost',
 		user 			: 'root',
 		password 		: Prvt.pass,
-		database 		: 'ndsql101',
+		database 		: 'world',
 		debug 			: false
 	})
 }

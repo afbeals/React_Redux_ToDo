@@ -50,6 +50,26 @@ export function itemsFetchDataSuccess(items){
   }
 }
 
+// export function itemsFetchData(url) {
+//     return (dispatch) => {
+//         dispatch(itemsIsLoading(true));
+//         axios.get(url)
+//             .then((response) => {
+//                 if (response.statusText != "OK") {
+//                     throw Error(response.statusText);
+//                 }
+//                 //console.log(response.request.response)
+//                 dispatch(itemsIsLoading(false));
+//                 console.log(response);
+//                 return response.request.response;
+//             })
+//             //.then((response) => response.json())
+//             .then((items) => dispatch(itemsFetchDataSuccess(items)))
+//             .catch(() => dispatch(itemsHasErrored(true)));
+//             //.catch((err)=>console.log('err',err));
+//     };
+// }
+
 export function itemsFetchData(url) {
     return (dispatch) => {
         dispatch(itemsIsLoading(true));
