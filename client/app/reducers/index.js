@@ -16,8 +16,9 @@ import curNum from './curNum';
 import itemsHasErrored from './hasErrored';
 import itemsIsLoading from './isLoading';
 import setItems from './setItems';
+import todos from './todos';
 
 // Combine all our reducers togeher
-const rootReducer = combineReducers({ person, curNum, itemsHasErrored, itemsIsLoading, setItems, routing: routerReducer });
+const rootReducer = combineReducers({ person, curNum, itemsHasErrored, itemsIsLoading, setItems, todos, routing: routerReducer });
 
 export default rootReducer;

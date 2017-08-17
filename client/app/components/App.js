@@ -36,7 +36,8 @@ function mapStateToProps(state) {
     curNum : state.curNum,
     setItems: state.setItems,
     itemsHasErrored: state.itemsHasErrored,
-    itemsIsLoading: state.itemsIsLoading
+    itemsIsLoading: state.itemsIsLoading,
+    todos: state.todos
   };
 }
 

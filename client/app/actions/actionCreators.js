@@ -1,5 +1,4 @@
 import axios from 'axios';
-import * as actions from './actions';
 /**
   Action Creators
 
@@ -13,6 +12,57 @@ import * as actions from './actions';
   We use const to store the name of the event so it is immutable
 
 */
+
+export function increaseNum(i) {
+  return {
+    type: 'INCREASE_NUM',
+    index: i
+  };
+}
+ 
+
+
+export function changeName(name) {
+  return {
+    type: 'CHANGE_NAME',
+    name,
+  };
+}
+
+export function itemsHasErrored(bool){
+  return {
+    type: 'ITEMS_HAS_ERRORED',
+    hasErrored: bool
+  }
+}
+
+export function itemsIsLoading(bool){
+  return {
+    type: 'ITEMS_IS_LOADING',
+    isLoading: bool
+  }
+}
+
+export function itemsFetchDataSuccess(items){
+  return{
+    type: "ITEMS_FETCH_DATA_SUCCESS",
+    items
+  }
+}
+
+export function addTodoItem(item){
+  return{
+    type: "ADD_TODO_ITEM",
+    item
+  }
+}
+
+export function removeTodoItem(index){
+  return{
+    type: "REMOVE_TODO_ITEM",
+    index
+  }
+}
 
 
 
@@ -38,69 +88,69 @@ import * as actions from './actions';
 
 export function itemsFetchData(url) {
     return (dispatch) => {
-        dispatch(actions.itemsIsLoading(true));
+        dispatch(itemsIsLoading(true));
         axios.get(url)
             .then((response) => {  
                 if (response.status != 200) {
                     throw Error(response.statusText);
                 }
                 //console.log(response.request.response)
-                dispatch(actions.itemsIsLoading(false));
+                dispatch(itemsIsLoading(false));
                 return response.request.response;
             })
             //.then((response) => response.json())
-            .then((items) => dispatch(actions.itemsFetchDataSuccess(items)))
-            .catch(() => dispatch(actions.itemsHasErrored(true)));
+            .then((items) => dispatch(itemsFetchDataSuccess(items)))
+            .catch(() => dispatch(itemsHasErrored(true)));
     };
 }
 
 export function itemsFetchCities(url) {
     return (dispatch) => {
-        dispatch(actions.itemsIsLoading(true));
+        dispatch(itemsIsLoading(true));
         axios.get(url)
             .then((response) => {  
                 if (response.status != 200) {
                     throw Error(response.statusText);
                 }
                 //console.log(response.request.response)
-                dispatch(actions.itemsIsLoading(false));
+                dispatch(itemsIsLoading(false));
                 return response.request.response;
             })
             //.then((response) => response.json())
-            .then((items) => dispatch(actions.itemsFetchDataSuccess(items)))
-            .catch(() => dispatch(actions.itemsHasErrored(true)));
+            .then((items) => dispatch(itemsFetchDataSuccess(items)))
+            .catch(() => dispatch(itemsHasErrored(true)));
     };
 }
 
 export function itemsFetchSingleCity(url,params){
   return(dispatch) =>{
-    dispatch(actions.itemsIsLoading(true));
+    dispatch(itemsIsLoading(true));
     axios.get(url,{params:{city:params}})
           .then((response)=>{
             if(response.status != 200){
               throw Error(response.statusText);
             }
-            dispatch(actions.itemsIsLoading(false));
+            dispatch(itemsIsLoading(false));
             return response.request.response;
           })
-          .then((items)=> dispatch(actions.itemsFetchDataSuccess(items)))
-          .catch(()=> dispatch(actions.itemsHasErrored(true)));
+          .then((items)=> dispatch(itemsFetchDataSuccess(items)))
+          .catch(()=> dispatch(itemsHasErrored(true)));
   };
 }
 
 export function itemsFetchCityLanguages(url,params){
   console.log(params);
   return(dispatch) =>{
-    dispatch(actions.itemsIsLoading(true));
+    dispatch(itemsIsLoading(true));
     axios.get(url,{params:{language:params}})
           .then((response)=>{
             if(response.status != 200){
               throw Error(response.statusText);
             }
-            dispatch(actions.itemsIsLoading(false));
+            dispatch(itemsIsLoading(false));
             return response.request.response;
           })
-          .then((items)=> dispatch(actions.itemsFetchDataSuccess(items)))
-          .catch(()=> dispatch(actions.itemsHasErrored(true)));
+          .then((items)=> dispatch(itemsFetchDataSuccess(items)))
+          .catch(()=> dispatch(itemsHasErrored(true)));
   };
 }

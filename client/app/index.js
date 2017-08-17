@@ -15,7 +15,6 @@ import Profile from './components/Profile';
 // Store
 import store, {history} from './store';
 
-
 render(
 	<Provider store={store}>
     { /* Tell the Router to use our enhanced history */ }

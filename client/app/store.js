@@ -17,7 +17,8 @@ const defaultState = {
   person: "Allan",
   setItems: [],
   itemsHasErrored: false,
-  itemsIsLoading: false
+  itemsIsLoading: false,
+  todos: ['1','2']
 };
 
 const enhancers = compose(
